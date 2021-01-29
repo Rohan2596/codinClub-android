@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".OtpVerificationActivity">
+    tools:context=".UserInfoActivity">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -78,22 +79,67 @@
         android:layout_marginRight="20dp">
 
         <EditText
-            android:id="@+id/edit_otp"
-            android:hint="Enter OTP"
+            android:id="@+id/edit_name"
+            android:hint="Please Enter Your Name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:layout_marginBottom="20dp"
-            android:inputType="number" />
+            android:inputType="text" />
 
 
+        <EditText
+            android:id="@+id/edit_stream"
+            android:hint="Please Select Your Stream"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginBottom="20dp"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/edit_year_of_passout"
+            android:hint="Please Select Year Of Passout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginBottom="20dp"
+            android:inputType="text" />
+
+
+        <EditText
+            android:id="@+id/edit_email_address"
+            android:hint="Please Enter Email Address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginBottom="20dp"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/edit_month_of_experience"
+            android:hint="Please Select Month of Experience"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginBottom="20dp"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/edit_experience_note"
+            android:hint="Tell me about your Experience"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginBottom="20dp"
+            android:inputType="textMultiLine" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#fc8019"
             android:fontFamily="@font/poppins_medium"
-            android:text="Confirm"
+            android:text="Submit"
             android:textColor="@color/white" />
 
     </LinearLayout>
