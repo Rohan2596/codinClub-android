@@ -84,6 +84,7 @@
             android:inputType="number" />
 
         <Button
+            android:id="@+id/button_sign_up"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#fc8019"
