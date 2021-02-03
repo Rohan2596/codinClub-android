@@ -15,7 +15,7 @@ public class UserInfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_info_part_1);
-        submitButton=findViewById(R.id.button_otp_verify);
+        submitButton=findViewById(R.id.button_confirm_user);
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

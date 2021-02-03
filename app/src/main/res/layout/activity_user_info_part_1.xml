@@ -49,11 +49,15 @@
         android:textAlignment="center"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:textFontWeight="700"
+        android:autoSizeMaxTextSize="30sp"
+        android:autoSizeMinTextSize="14sp"
+        android:autoSizeStepGranularity="2sp"
+        android:fontFamily="@font/poppins_medium"
+        app:autoSizeTextType="uniform"
         android:textColor="@color/black"
         android:padding="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:gravity="center_horizontal" />
 
     <TextView
@@ -75,6 +79,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:scrollbars="vertical"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp">
 
@@ -135,6 +140,7 @@
             android:inputType="textMultiLine" />
 
         <Button
+            android:id="@+id/button_confirm_user"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#fc8019"

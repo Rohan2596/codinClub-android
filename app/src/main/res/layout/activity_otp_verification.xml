@@ -46,26 +46,31 @@
         android:text="Assuring Your Dream tech Job!"
         android:background="#D6EDF6"
         android:textAlignment="center"
-        android:textSize="20dp"
+        android:autoSizeMaxTextSize="30sp"
+        android:autoSizeMinTextSize="14sp"
+        android:autoSizeStepGranularity="2sp"
+        android:fontFamily="@font/poppins_medium"
+        app:autoSizeTextType="uniform"
         android:textStyle="bold"
-        android:textFontWeight="700"
         android:textColor="@color/black"
         android:padding="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         android:textAlignment="center"
+        android:autoSizeMaxTextSize="30sp"
+        android:autoSizeMinTextSize="14sp"
+        android:autoSizeStepGranularity="2sp"
         android:fontFamily="@font/poppins_medium"
+        app:autoSizeTextType="uniform"
         android:text="Completes First Step Towards"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textSize="24dp"
         android:gravity="center_horizontal" />
 
 

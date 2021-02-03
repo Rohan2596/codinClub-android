@@ -15,7 +15,7 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        signUp=findViewById(R.id.button_sign_up);
+        signUp=(Button) findViewById(R.id.button_sign_up);
         signUp.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent otpIntent=new Intent(SignUpActivity.this,OtpVerificationActivity.class);
