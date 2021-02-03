@@ -48,12 +48,17 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
-        android:textAlignment="center"
+        android:autoSizePresetSizes="@array/autosize_text_sizes"
+        android:autoSizeTextType="uniform"
+        android:autoText="true"
         android:fontFamily="@font/poppins_medium"
+        android:gravity="center_horizontal"
         android:text="Completes First Step Towards"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textSize="24dp"
-        android:gravity="center_horizontal" />
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textFontWeight="@android:integer/config_mediumAnimTime"
+        app:autoSizePresetSizes="@array/autosize_text_sizes"
+        app:autoSizeTextType="uniform" />
 
     <TextView
         android:layout_width="match_parent"
