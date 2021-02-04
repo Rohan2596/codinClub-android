@@ -83,61 +83,101 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp">
 
-        <EditText
-            android:id="@+id/edit_name"
-            android:hint="Please Enter Your Name"
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:layout_marginBottom="20dp"
-            android:inputType="text" />
+            android:layout_marginBottom="10dp"
+            android:hint="Name"
+            tools:ignore="HardcodedText">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                tools:ignore="HardcodedText" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/edit_stream"
-            android:hint="Please Select Your Stream"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:layout_marginBottom="20dp"
-            android:inputType="text" />
+            android:layout_marginBottom="10dp"
+            android:hint="Stream"
+            tools:ignore="HardcodedText">
 
-        <EditText
-            android:id="@+id/edit_year_of_passout"
-            android:hint="Please Select Year Of Passout"
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                tools:ignore="HardcodedText" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:layout_marginBottom="20dp"
-            android:inputType="text" />
+            android:layout_marginBottom="10dp"
+            android:hint="Year of PassOut"
+            tools:ignore="HardcodedText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                tools:ignore="HardcodedText" />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-        <EditText
-            android:id="@+id/edit_email_address"
-            android:hint="Please Enter Email Address"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:layout_marginBottom="20dp"
-            android:inputType="textEmailAddress" />
+            android:layout_marginBottom="10dp"
+            android:hint="Email Address"
+            tools:ignore="HardcodedText">
 
-        <EditText
-            android:id="@+id/edit_month_of_experience"
-            android:hint="Please Select Month of Experience"
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                tools:ignore="HardcodedText" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:layout_marginBottom="20dp"
-            android:inputType="text" />
+            android:layout_marginBottom="10dp"
+            android:hint="Month of Experience"
+            tools:ignore="HardcodedText">
 
-        <EditText
-            android:id="@+id/edit_experience_note"
-            android:hint="Tell me about your Experience"
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                tools:ignore="HardcodedText" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:layout_marginBottom="20dp"
-            android:inputType="textMultiLine" />
+            android:layout_marginBottom="10dp"
+            android:hint="Experience Note"
+            tools:ignore="HardcodedText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                tools:ignore="HardcodedText" />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <Button
             android:id="@+id/button_confirm_user"

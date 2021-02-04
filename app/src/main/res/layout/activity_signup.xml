@@ -76,21 +76,29 @@
         android:gravity="center_horizontal"/>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/editTextNumber"
-            android:hint="Type Phone Number"
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:layout_marginBottom="20dp"
-            android:inputType="number" />
+            android:layout_marginBottom="10dp"
+            android:hint="Mobile Number"
+            tools:ignore="HardcodedText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+
+                android:inputType="number"
+                tools:ignore="HardcodedText" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/button_sign_up"
@@ -102,5 +110,7 @@
             android:textColor="@color/white" />
 
     </LinearLayout>
+
+
 
 </LinearLayout>
