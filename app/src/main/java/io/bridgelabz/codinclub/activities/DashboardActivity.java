@@ -1,8 +1,10 @@
-package io.bridgelabz.codinclub;
+package io.bridgelabz.codinclub.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import io.bridgelabz.codinclub.R;
 
 public class DashboardActivity extends AppCompatActivity {
 
