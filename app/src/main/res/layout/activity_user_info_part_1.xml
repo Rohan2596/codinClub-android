@@ -74,7 +74,7 @@
         android:gravity="center_horizontal" />
 
 
-    <LinearLayout
+    <ScrollView
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -95,6 +95,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMaxTextSize="30sp"
+                android:autoSizeMinTextSize="14sp"
+                android:autoSizeStepGranularity="2sp"
                 android:inputType="text"
                 tools:ignore="HardcodedText" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -110,6 +114,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMaxTextSize="30sp"
+                android:autoSizeMinTextSize="14sp"
+                android:autoSizeStepGranularity="2sp"
                 android:inputType="text"
                 tools:ignore="HardcodedText" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -125,6 +133,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMaxTextSize="30sp"
+                android:autoSizeMinTextSize="14sp"
+                android:autoSizeStepGranularity="2sp"
                 android:inputType="text"
                 tools:ignore="HardcodedText" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -141,6 +153,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMaxTextSize="30sp"
+                android:autoSizeMinTextSize="14sp"
+                android:autoSizeStepGranularity="2sp"
                 android:inputType="textEmailAddress"
                 tools:ignore="HardcodedText" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -157,6 +173,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMaxTextSize="30sp"
+                android:autoSizeMinTextSize="14sp"
+                android:autoSizeStepGranularity="2sp"
                 android:inputType="text"
                 tools:ignore="HardcodedText" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -174,6 +194,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMaxTextSize="30sp"
+                android:autoSizeMinTextSize="14sp"
+                android:autoSizeStepGranularity="2sp"
                 android:inputType="textMultiLine"
                 tools:ignore="HardcodedText" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -188,6 +212,6 @@
             android:text="Submit"
             android:textColor="@color/white" />
 
-    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
