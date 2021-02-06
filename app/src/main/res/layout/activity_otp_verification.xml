@@ -86,14 +86,17 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:hint="Enter OTP"
+            app:helperTextEnabled="true"
+            app:helperText="Please Valid OTP "
+            app:counterEnabled="true"
+            app:counterMaxLength="4"
             tools:ignore="HardcodedText">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                app:counterEnabled="true"
-                app:counterMaxLength="4"
+
                 android:autoSizeTextType="uniform"
                 android:autoSizeMaxTextSize="30sp"
                 android:autoSizeMinTextSize="14sp"

@@ -89,6 +89,10 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:hint="Name"
+            app:helperTextEnabled="true"
+            app:helperText="Please Valid Name "
+            app:counterEnabled="true"
+            app:counterMaxLength="30"
             tools:ignore="HardcodedText">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -108,6 +112,10 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:hint="Stream"
+            app:helperTextEnabled="true"
+            app:helperText="Please Valid Stream "
+            app:counterEnabled="true"
+            app:counterMaxLength="15"
             tools:ignore="HardcodedText">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -127,6 +135,10 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:hint="Year of PassOut"
+            app:helperTextEnabled="true"
+            app:helperText="Please Valid Year of Passout "
+            app:counterEnabled="true"
+            app:counterMaxLength="15"
             tools:ignore="HardcodedText">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -147,6 +159,9 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:hint="Email Address"
+            app:helperTextEnabled="true"
+            app:helperText="Please Valid Email Address"
+
             tools:ignore="HardcodedText">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -167,6 +182,9 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:hint="Month of Experience"
+            app:helperTextEnabled="true"
+            app:helperText="Please Valid Month Of Experience"
+
             tools:ignore="HardcodedText">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -188,6 +206,9 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:hint="Experience Note"
+            app:helperTextEnabled="true"
+            app:helperText="Tell Us About Your Experience"
+
             tools:ignore="HardcodedText">
 
             <com.google.android.material.textfield.TextInputEditText

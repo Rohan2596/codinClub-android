@@ -89,19 +89,26 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:hint="Mobile Number"
+            app:helperTextEnabled="true"
+            app:helperText="Please Valid Mobile Number"
+            app:counterEnabled="true"
+            app:counterMaxLength="10"
+            app:errorEnabled="true"
             tools:ignore="HardcodedText">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                app:counterEnabled="true"
-                app:counterMaxLength="10"
+
                 android:autoSizeTextType="uniform"
                 android:autoSizeMaxTextSize="30sp"
                 android:autoSizeMinTextSize="14sp"
                 android:autoSizeStepGranularity="2sp"
                 android:inputType="number"
+
+                android:ellipsize="end"
+                android:maxLines="1"
                 tools:ignore="HardcodedText" />
         </com.google.android.material.textfield.TextInputLayout>
 
