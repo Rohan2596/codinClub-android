@@ -85,6 +85,7 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputMobileNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -99,15 +100,15 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-
-                android:autoSizeTextType="uniform"
                 android:autoSizeMaxTextSize="30sp"
+
                 android:autoSizeMinTextSize="14sp"
                 android:autoSizeStepGranularity="2sp"
-                android:inputType="number"
-
+                android:autoSizeTextType="uniform"
                 android:ellipsize="end"
+
+                android:ems="10"
+                android:inputType="number"
                 android:maxLines="1"
                 tools:ignore="HardcodedText" />
         </com.google.android.material.textfield.TextInputLayout>
