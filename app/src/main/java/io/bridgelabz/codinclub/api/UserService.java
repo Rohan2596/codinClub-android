@@ -1,14 +1,16 @@
-package io.bridgelabz.codinclub.activities.api;
+package io.bridgelabz.codinclub.api;
 
+import io.bridgelabz.codinclub.dtos.AddUser;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 
 public interface UserService {
 
-    @POST("register")
-    Call<Response>addUser();
+    @POST("/user/register")
+    Call<Response>addUser(@Body AddUser addUser);
 
     @GET("/user/app-config")
     Call<Response>appConfiguration();

@@ -1,4 +1,4 @@
-package io.bridgelabz.codinclub.activities.api;
+package io.bridgelabz.codinclub.api;
 
 import com.google.gson.annotations.SerializedName;
 

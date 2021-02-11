@@ -12,11 +12,18 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputLayout;
 
 import io.bridgelabz.codinclub.R;
+import io.bridgelabz.codinclub.api.ApiClient;
+import io.bridgelabz.codinclub.api.Response;
+import io.bridgelabz.codinclub.api.UserService;
+import io.bridgelabz.codinclub.dtos.AddUser;
+import retrofit2.Call;
+import retrofit2.Callback;
 
 public class SignUpActivity extends AppCompatActivity {
 
     Button signUp;
     TextInputLayout textInputMobileNumber;
+    UserService userService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +43,9 @@ public class SignUpActivity extends AppCompatActivity {
         });
 
     }
+
+
+
 
     private boolean validateMobileNumber(){
         String mobileNumber=textInputMobileNumber.getEditText().getText().toString().trim();
@@ -60,6 +70,32 @@ public class SignUpActivity extends AppCompatActivity {
         if(!validateMobileNumber()){
             return;
         }
+        String mobileNumber=textInputMobileNumber.getEditText().getText().toString();
+        AddUser addUser =new AddUser("91"+mobileNumber,"Android App","","");
+        signUp(addUser);
         Toast.makeText(this,textInputMobileNumber.getEditText().getText().toString(),Toast.LENGTH_LONG).show();
+    }
+
+
+    public void signUp(AddUser addUser){
+        userService= ApiClient.getClient().create(UserService.class);
+        Call<Response> responseCall=userService.addUser(addUser);
+        responseCall.enqueue(
+                new Callback<Response>() {
+                    @Override
+                    public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                        if(response.isSuccessful()){
+                            Toast.makeText(SignUpActivity.this,"Succesfull",Toast.LENGTH_LONG).show();
+
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Response> call, Throwable t) {
+                        Toast.makeText(SignUpActivity.this,"Failure",Toast.LENGTH_LONG).show();
+
+                    }
+                }
+        );
     }
 }
