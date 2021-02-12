@@ -12,14 +12,25 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputLayout;
 
 import io.bridgelabz.codinclub.R;
+import io.bridgelabz.codinclub.api.ApiClient;
+import io.bridgelabz.codinclub.api.Response;
+import io.bridgelabz.codinclub.api.UserService;
+import io.bridgelabz.codinclub.dtos.AddUser;
+import retrofit2.Call;
+import retrofit2.Callback;
 
 public class OtpVerificationActivity extends AppCompatActivity {
 
     Button otpVerificationButton;
     TextInputLayout textInputOtp;
+    UserService userService;
+    Intent intent;
+    String mobileNumber;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        intent=getIntent();
         setContentView(R.layout.activity_otp_verification);
         otpVerificationButton=findViewById(R.id.button_otp_verify);
         textInputOtp=(TextInputLayout)findViewById(R.id.text_input_otp);
@@ -28,9 +39,10 @@ public class OtpVerificationActivity extends AppCompatActivity {
         otpVerificationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mobileNumber=intent.getStringExtra("mobileNumber");
                 confirmInput(view);
-                Intent userInfoIntent=new Intent(OtpVerificationActivity.this,UserInfoActivity.class);
-                startActivity(userInfoIntent);
+                intent=new Intent(OtpVerificationActivity.this,UserInfoActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -55,6 +67,29 @@ public class OtpVerificationActivity extends AppCompatActivity {
         if(!validateOtp()){
             return;
         }
+        OtpVerification(mobileNumber,textInputOtp.getEditText().getText().toString());
         Toast.makeText(this,textInputOtp.getEditText().getText().toString(),Toast.LENGTH_LONG).show();
+    }
+
+    public void OtpVerification(String mobileNumber,String otp){
+        userService= ApiClient.getClient().create(UserService.class);
+        Call<Response> responseCall=userService.verityOtp(mobileNumber,otp);
+        responseCall.enqueue(
+                new Callback<Response>() {
+                    @Override
+                    public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                        if(response.isSuccessful()){
+                            Toast.makeText(OtpVerificationActivity.this,"Succesfull",Toast.LENGTH_LONG).show();
+
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Response> call, Throwable t) {
+                        Toast.makeText(OtpVerificationActivity.this,"Failure",Toast.LENGTH_LONG).show();
+
+                    }
+                }
+        );
     }
 }

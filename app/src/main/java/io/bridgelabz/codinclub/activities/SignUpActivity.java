@@ -25,11 +25,12 @@ public class SignUpActivity extends AppCompatActivity {
     TextInputLayout textInputMobileNumber;
     UserService userService;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-
+        appConfiguration();
         signUp=(Button) findViewById(R.id.button_sign_up);
         textInputMobileNumber=(TextInputLayout)findViewById(R.id.textInputMobileNumber);
 
@@ -38,6 +39,7 @@ public class SignUpActivity extends AppCompatActivity {
             public void onClick(View view) {
                 confrimInput(view);
                 Intent otpIntent=new Intent(SignUpActivity.this,OtpVerificationActivity.class);
+                otpIntent.putExtra("mobileNumber",textInputMobileNumber.getEditText().getText().toString());
                 startActivity(otpIntent);
             }
         });
@@ -86,6 +88,28 @@ public class SignUpActivity extends AppCompatActivity {
                     public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                         if(response.isSuccessful()){
                             Toast.makeText(SignUpActivity.this,"Succesfull",Toast.LENGTH_LONG).show();
+
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Response> call, Throwable t) {
+                        Toast.makeText(SignUpActivity.this,"Failure",Toast.LENGTH_LONG).show();
+
+                    }
+                }
+        );
+    }
+
+    public void appConfiguration(){
+        userService= ApiClient.getClient().create(UserService.class);
+        Call<Response> responseCall=userService.appConfiguration();
+        responseCall.enqueue(
+                new Callback<Response>() {
+                    @Override
+                    public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                        if(response.isSuccessful()){
+                            Toast.makeText(SignUpActivity.this,response.body().getMessage(),Toast.LENGTH_LONG).show();
 
                         }
                     }
