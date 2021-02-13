@@ -12,24 +12,33 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputLayout;
 
 import io.bridgelabz.codinclub.R;
+import io.bridgelabz.codinclub.api.ApiClient;
+import io.bridgelabz.codinclub.api.Response;
+import io.bridgelabz.codinclub.api.UserService;
+import io.bridgelabz.codinclub.dtos.AddUser;
+import io.bridgelabz.codinclub.dtos.EditUser;
+import retrofit2.Call;
+import retrofit2.Callback;
 
 public class UserInfoActivity extends AppCompatActivity {
 
     Button submitButton;
-    TextInputLayout textInputName,textInputEmailAddress,textYearOfPassingOut,textInputStream,textMothOfExperience;
-
+    TextInputLayout textInputName,textInputEmailAddress,textYearOfPassingOut,textInputStream,textMothOfExperience,textExperienceNote;
+    UserService userService;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_info_part_1);
 
         submitButton=findViewById(R.id.button_confirm_user);
+
         //Input Field form User Info
         textInputName=findViewById(R.id.text_input_name);
         textInputEmailAddress=findViewById(R.id.text_input_emailAddress);
         textYearOfPassingOut=findViewById(R.id.text_input_yop);
         textInputStream=findViewById(R.id.text_input_stream);
         textMothOfExperience=findViewById(R.id.text_input_monthOfExperience);
+        textExperienceNote=findViewById(R.id.text_input_aboutExperience);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,6 +106,16 @@ public class UserInfoActivity extends AppCompatActivity {
         if(!validateName()|| !validateEmailAddress() || !validateStream() || !validateYearOfPassing()){
             return;
         }
+
+        String token="";
+        EditUser editUser=new EditUser(textInputEmailAddress.getEditText().getText().toString(),
+                textInputName.getEditText().getText().toString(),
+                textInputStream.getEditText().getText().toString(),
+                textMothOfExperience.getEditText().getText().toString(),
+                textYearOfPassingOut.getEditText().getText().toString(),
+                textExperienceNote.getEditText().toString());
+
+        updateUserData(token,editUser);
         Toast.makeText(this,
                 textInputStream.getEditText().getText().toString()
                 +"Name:- " +textInputName.getEditText().getText().toString()
@@ -107,5 +126,27 @@ public class UserInfoActivity extends AppCompatActivity {
     }
 
 
+
+    public void updateUserData(String token, EditUser editUser){
+        userService= ApiClient.getClient().create(UserService.class);
+        Call<Response> responseCall=userService.updateUser(token,editUser);
+        responseCall.enqueue(
+                new Callback<Response>() {
+                    @Override
+                    public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                        if(response.isSuccessful()){
+                            Toast.makeText(UserInfoActivity.this,"Succesfull",Toast.LENGTH_LONG).show();
+
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Response> call, Throwable t) {
+                        Toast.makeText(UserInfoActivity.this,"Failure",Toast.LENGTH_LONG).show();
+
+                    }
+                }
+        );
+    }
 
 }
