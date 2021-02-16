@@ -29,7 +29,9 @@ public class SignUpActivity extends AppCompatActivity {
     TextInputLayout textInputMobileNumber;
     UserService userService;
 
+    SharedPreferences sharedPreferences;
 
+    public static final String perference="codinClub";
 
 
     @Override
@@ -39,7 +41,7 @@ public class SignUpActivity extends AppCompatActivity {
         appConfiguration();
         signUp=(Button) findViewById(R.id.button_sign_up);
         textInputMobileNumber=(TextInputLayout)findViewById(R.id.textInputMobileNumber);
-
+         sharedPreferences=getSharedPreferences(perference,Context.MODE_PRIVATE);
         signUp.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 confrimInput(view);
@@ -80,8 +82,6 @@ public class SignUpActivity extends AppCompatActivity {
         String mobileNumber=textInputMobileNumber.getEditText().getText().toString();
         AddUser addUser =new AddUser("91"+mobileNumber,"Android App","","");
         signUp(addUser);
-
-
     }
 
 
@@ -95,7 +95,6 @@ public class SignUpActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                         if(response.isSuccessful()){
-
                             Toast.makeText(SignUpActivity.this,response.body().getMessage(),Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -110,6 +109,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void appConfiguration(){
+        SharedPreferences.Editor editor=sharedPreferences.edit();
         userService= ApiClient.getClient().create(UserService.class);
         Call<Response> responseCall=userService.appConfiguration();
         responseCall.enqueue(
@@ -117,6 +117,9 @@ public class SignUpActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                         if(response.isSuccessful()){
+                            editor.putString("passingYear",response.body().getData().toString());
+                            editor.putString("Streams",response.body().getMessage());
+                            editor.commit();
                             Toast.makeText(SignUpActivity.this,response.body().getMessage(),Toast.LENGTH_SHORT).show();
 
                         }

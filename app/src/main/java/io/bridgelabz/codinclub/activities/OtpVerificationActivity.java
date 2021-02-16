@@ -31,6 +31,7 @@ public class OtpVerificationActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
 
     public static final String perference="codinClub";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
